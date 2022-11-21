@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.png" />
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <style>
+        /* 1- General */
+        /* 2- Nav */
+        /* 3- Slider */
+        /* 4- Boxes */
+
+        /* 1- General */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color1: #988;
+            --color2: #496;
+            --color3: #469;
+            --color4: #996;
+            --color5: rgb(19, 27, 140);
+            --color6: rgb(10, 10, 10);
+            --color7: #626;
+        }
+
+        /* 2- Nav */
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: stretch;
+            /* flex-direction: row; */
+            background-color: #333;
+            color: #fff;
+        }
+
+        nav>div:first-child {
+            height: 64px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 10px;
+        }
+
+        nav>div:first-child>img {
+            height: 100%;
+            border: 6px solid #fff;
+            border-radius: 50%;
+        }
+
+        nav>div:last-child>i {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        /* nav>div:last-child>i:active>ul {
+            display: flex;
+        } */
+
+        nav ul {
+            list-style: none;
+            display: none;
+            flex-direction: column;
+        }
+
+        nav a {
+            color: inherit;
+            text-decoration: none;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            padding: 10px 5px;
+        }
+
+        nav a>span {
+            padding-right: 5px;
+        }
+
+        nav a:hover {
+            background-color: #eee;
+            color: #333;
+            border-bottom: 6px solid #533;
+        }
+
+        nav ul ul a {
+            background-color: #555;
+            padding-left: 17px;
+        }
+
+        nav ul ul ul a {
+            background-color: #777;
+            padding-left: 17px;
+        }
+
+        nav ul ul {
+            display: none;
+        }
+
+        nav ul>li:hover>ul {
+            display: list-item;
+        }
+
+
+        /* 3- Slider */
+
+        .slider {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .slider>div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* height: 300px; */
+            overflow: hidden;
+            position: relative;
+
+        }
+
+        .slider>div>img {
+            width: 100%;
+            /* height: 100%; */
+            object-fit: cover;
+            filter: brightness(50%) saturate(20%);
+        }
+
+        .slider>div>div {
+            color: #fff;
+            position: absolute;
+            /* top: 50%; */
+        }
+
+        /* .slider>div>span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: block;
+            background-color: #000;
+            opacity: 0.8;
+        } */
+
+        /* 4- Boxes */
+
+        .boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 10px;
+            background-color: #eee;
+        }
+
+        .boxes>div {
+            margin-bottom: 10px;
+            border: 1px solid #999;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 5px;
+        }
+
+        .boxes>div>p {
+            width: 75%;
+            text-align: center;
+            margin: 15px;
+        }
+
+        .boxes>div>h3 {
+            margin-top: -15px;
+            background-color: #eee;
+            padding: 0 15px;
+        }
+
+        .boxes>div:nth-child(1)>h3 {
+            color: var(--color1);
+        }
+
+        .boxes>div:nth-child(1)>a {
+            background-color: var(--color1);
+        }
+
+        .boxes>div:nth-child(2)>h3 {
+            color: var(--color2);
+        }
+
+        .boxes>div:nth-child(2)>a {
+            background-color: var(--color2);
+        }
+
+        .boxes>div:nth-child(3)>h3 {
+            color: var(--color3);
+        }
+
+        .boxes>div:nth-child(3)>a {
+            background-color: var(--color3);
+        }
+
+        .boxes>div:nth-child(4)>h3 {
+            color: var(--color4);
+        }
+
+        .boxes>div:nth-child(4)>a {
+            background-color: var(--color4);
+        }
+
+        .boxes>div:nth-child(5)>h3 {
+            color: var(--color5);
+        }
+
+        .boxes>div:nth-child(5)>a {
+            background-color: var(--color5);
+        }
+
+        .boxes>div:nth-child(6)>h3 {
+            color: var(--color6);
+        }
+
+        .boxes>div:nth-child(6)>a {
+            background-color: var(--color6);
+        }
+
+        .boxes>div>a {
+            color: inherit;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-style: solid;
+            padding: 7px 20px;
+            margin: 10px;
+            background-color: var(--color3);
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .boxes>div>a:hover {
+            filter: brightness(60%);
+        }
+
+        @media screen and (min-width: 600px) {
+            .boxes {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+            }
+
+            .boxes>div {
+                width: 45%;
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            .boxes {
+                padding: 50px 0;
+            }
+
+            .boxes>div {
+                width: 32%;
+            }
+
+            nav {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            nav>div:first-child {
+                flex: 1;
+            }
+
+            nav>div:first-child>i {
+                display: none;
+            }
+
+            nav>div:last-child {
+                flex: 5;
+            }
+
+            nav ul {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+            }
+
+            nav ul ul li {
+                position: relative;
+            }
+
+             nav ul ul {  
+                position: absolute;
+                z-index: 1;
+                width: 200px;
+            }
+            
+            nav ul ul ul {
+                left: 100%;
+                top: 0%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div>
+            <img src="logo.png" alt="">
+            <i class="fa fa-bars"></i>
+        </div>
+
+        <div>
+            <ul id="nav">
+                <li>
+                    <a href="#">Link 1</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Link 2</span>
+                        <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul>
+                        <li><a href="#">Link 2 - a</a></li>
+                        <li><a href="#">Link 2 - b</a></li>
+                        <li>
+                            <a href="#">
+                                <span>Link 2 - c</span>
+                                <i class="fa fa-caret-down"></i>
+                            </a>
+                            <ul>
+                                <li><a href="#">Link 2 - c - I</a></li>
+                                <li><a href="#">Link 2 - c - II</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">Link - 3</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+
+        <div class="container slider">
+            <div>
+                <img src="bm.jpg" alt="">
+                <!-- <span></span> -->
+                <div>
+                    <h2>Lorem ipsum dolor sit.</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container boxes">
+
+            <div>
+                <h3>.NET</h3>
+                <h2>Microsoft.Net</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <a href="">Learn More...</a>
+            </div>
+            <div>
+                <h3>Maged</h3>
+                <h2>Microsoft.Net</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <a href="">Learn More...</a>
+            </div>
+            <div>
+                <h3>Ibrahim</h3>
+                <h2>Microsoft.Net</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <a href="">Learn More...</a>
+            </div>
+            <div>
+                <h3>Sara</h3>
+                <h2>Microsoft.Net</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <a href="">Learn More...</a>
+            </div>
+            <div>
+                <h3>.NET</h3>
+                <h2>Microsoft.Net</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <a href="">Learn More...</a>
+            </div>
+            <div>
+                <h3>.NET</h3>
+                <h2>Microsoft.Net</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <a href="">Learn More...</a>
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        document.querySelector('nav>div:first-child>i').addEventListener('click', function () {
+            document.querySelector('nav>div:last-child ul').style.display = 'flex';
+            document.querySelector('nav>div:first-child>i').display = 'none';
+        });
+
+
+    </script>
+</body>
+
+</html>
